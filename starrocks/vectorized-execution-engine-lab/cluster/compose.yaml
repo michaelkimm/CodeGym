@@ -1,0 +1,14 @@
+services:
+  starrocks:
+    image: starrocks/allin1-ubuntu:3.3.22
+    ports:
+      - "127.0.0.1:9030:9030"
+      - "127.0.0.1:8030:8030"
+      - "127.0.0.1:8040:8040"
+    volumes:
+      - fe_meta:/data/deploy/starrocks/fe/meta
+      - be_storage:/data/deploy/starrocks/be/storage
+
+volumes:
+  fe_meta:
+  be_storage:
