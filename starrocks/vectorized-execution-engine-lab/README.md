@@ -4,6 +4,10 @@
 NumPy Chunk, StarRocks 3.3.22 순서로 따라간다. 속도 경쟁이 아니라 데이터 이동과
 Operator 입출력을 이해하는 것이 목표다.
 
+지금까지의 개념을 FE/BE, Operator, SIMD와 CPU 관점까지 한 번에 연결한 문서는
+[StarRocks 벡터화 실행 엔진 학습 정리](starrocks-vectorized-query-walkthrough.md)를
+참고한다.
+
 각 단계에서는 먼저 결과나 호출 횟수를 예상하고, 명령을 실행해 관찰한 다음, 안내된
 코드만 읽는다. 뒤 단계의 내부 구현을 미리 모두 이해할 필요는 없다.
 
