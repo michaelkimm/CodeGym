@@ -111,7 +111,15 @@ On-disk format versioning과 compatibility의 개념 및 RocksDB 논문 §4.4의
 - [통과 기준별 최종 평가와 교정 기록](chapters/03-physical-lookup/evaluation.md)
 - 최종 평가: MemTable·SST의 저장 구조, data/index/filter block과 두 cache의 역할, L0 중첩·L1+ 비중첩을 이용한 Get 후보 선택과 조기 종료, Bloom의 false positive, Iterator의 커서 유지·갱신과 지속적인 sorted-run 병합 및 일관된 읽기 뷰를 설명해 통과했다. Prefix Seek 세부 옵션은 이번 통과에 요구하지 않았다.
 - 평가일: `2026-10-05`
-- 4장은 아직 시작하지 않았다.
+
+### 4. 버전과 논리적 시간
+
+- 상태: `통과` — 추가 풀이 생략에 대한 학습자의 진행 승인
+- [학습자가 작성한 정리와 설명자 보완](chapters/04-versions-and-logical-time/learner-notes.md)
+- [기준별 평가와 진행 승인 기록](chapters/04-versions-and-logical-time/evaluation.md)
+- 최종 평가: InternalKey·ValueType, 읽기 경계별 Get·Delete·Merge 해석, Iterator의 읽기 시점, Snapshot과 SuperVersion의 역할 구분을 확인했다. type 순서의 역할과 CF·DB 경계, Iterator 예제의 결과는 설명자가 보완했으며 추가 답안은 받지 않았다. 학습자가 세 확인 문제의 추가 풀이를 생략하고 진행하라고 승인해 통과로 기록했다.
+- 평가일: `2026-10-24`
+- 5장은 아직 시작하지 않았다.
 
 ## 종료 시험
 
