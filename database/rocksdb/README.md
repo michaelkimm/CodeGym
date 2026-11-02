@@ -119,7 +119,15 @@ On-disk format versioning과 compatibility의 개념 및 RocksDB 논문 §4.4의
 - [기준별 평가와 진행 승인 기록](chapters/04-versions-and-logical-time/evaluation.md)
 - 최종 평가: InternalKey·ValueType, 읽기 경계별 Get·Delete·Merge 해석, Iterator의 읽기 시점, Snapshot과 SuperVersion의 역할 구분을 확인했다. type 순서의 역할과 CF·DB 경계, Iterator 예제의 결과는 설명자가 보완했으며 추가 답안은 받지 않았다. 학습자가 세 확인 문제의 추가 풀이를 생략하고 진행하라고 승인해 통과로 기록했다.
 - 평가일: `2026-10-24`
-- 5장은 아직 시작하지 않았다.
+
+### 5. 원자성과 충돌 제어
+
+- 상태: `통과` — 일부 추가 풀이 생략과 정리·평가 범위 제외에 대한 학습자 승인 반영
+- [학습자가 작성한 최종 정리와 설명자 보완](chapters/05-atomicity-and-conflict-control/learner-notes.md)
+- [기준별 평가와 생략·제외 승인 기록](chapters/05-atomicity-and-conflict-control/evaluation.md)
+- 최종 평가: WriteBatch와 isolation의 차이, lost update, 비관적 잠금과 낙관적 커밋 검사, 읽기 Snapshot과 충돌 기준의 구분을 확인했다. isolation 정의와 같은 Snapshot을 공유하는 읽기 조건은 학습자가 수정했다. Transaction 가시성과 읽기 의존성의 추가 풀이, 대기·timeout·abort·retry와 UNIQUE의 별도 정리·평가는 학습자 승인으로 생략·제외했으며 독립적인 재검증을 마쳤다고 기록하지 않는다.
+- 평가일: `2026-11-02`
+- 이번 세션은 5장만 종료했다. 6장은 아직 시작하지 않았다.
 
 ## 종료 시험
 
