@@ -129,6 +129,15 @@ On-disk format versioning과 compatibility의 개념 및 RocksDB 논문 §4.4의
 - 평가일: `2026-11-02`
 - 이번 세션은 5장만 종료했다. 6장은 아직 시작하지 않았다.
 
+### 6. Compaction 정확성과 데이터 생명주기
+
+- 상태: `통과`
+- [학습자가 작성한 최종 정리와 직접 교정한 답변](chapters/06-compaction-correctness-and-data-lifecycle/learner-notes.md)
+- [통과 기준별 최종 평가와 교정 기록](chapters/06-compaction-correctness-and-data-lifecycle/evaluation.md)
+- 최종 평가: Flush 출력 SST와 immutable MemTable의 구별, 정렬 병합과 새 Version 설치, Snapshot의 과거 버전 보존, tombstone의 하위 레벨 확인 조건, Iterator·SuperVersion의 물리 자원 보존과 obsolete file 회수를 설명해 통과했다. Flush의 출력 위치와 기존 Iterator의 순회 대상을 문답으로 교정하고 최종 Notion의 제목·그림·연결 표현을 재확인했다.
+- 평가일: `2026-11-08`
+- 이번 세션은 6장만 종료했다.
+
 ## 종료 시험
 
 다음 흐름을 보고 논리 결과와 물리 상태를 함께 설명할 수 있어야 한다.
