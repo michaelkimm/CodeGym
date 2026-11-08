@@ -15,7 +15,7 @@
 3. **데이터 변경 비용을 언제, 어디에서 지불하는가?** In-place update와 append, buffer와 MemTable, immutable file, read·write·space amplification을 비교한다.
 4. **여러 읽기와 쓰기가 겹칠 때 누구에게 어떤 버전이 보여야 하는가?** Lock, MVCC, Sequence Number, Snapshot, isolation과 정상 실행 중의 atomicity를 다룬다.
 5. **실행 도중 멈췄을 때 무엇이 살아남고 어떻게 복구되는가?** WAL, redo·undo, checkpoint, commit, crash atomicity와 client acknowledgement의 의미를 배운다.
-6. **오래 실행되고 작업들이 유한한 자원을 경쟁해도 어떻게 성능을 유지하는가?** Compaction, Vacuum, Purge, Merge, tombstone 제거, cache·thread·I/O 관리, per-instance와 per-host 제어, backpressure와 stall을 다룬다.
+6. **오래 실행되고 작업들이 유한한 자원을 경쟁해도 어떻게 성능을 유지하는가?** Compaction, Vacuum, Purge, Merge, tombstone 제거, cache·thread·I/O 관리, foreground와 background 작업의 자원 경쟁, backpressure와 stall을 다룬다. 다중 인스턴스·호스트 운영 사례의 학습 깊이는 제품별 목표에서 정한다.
 7. **한 노드를 넘으면 데이터의 책임과 진실을 어떻게 나누는가?** Partitioning, replication, consistency, quorum, consensus, distributed transaction과 distributed execution을 배운다.
 8. **그래서 이 시스템은 어떤 문제에 적합하며, 무엇을 얻고 잃는가?** Embedded engine·DBMS·managed service의 책임 경계를 구분하고, RocksDB부터 HeatWave까지 OLTP·OLAP·HTAP의 저장 및 실행 구조를 비교한다.
 
@@ -58,7 +58,7 @@
 - 논문의 직접 주장, 공식 문서의 보장, 현재 구현으로 확인한 동작, 일반적인 데이터베이스 모델과 추론을 구분한다. 원문에 직접 적히지 않은 연결이나 결론은 추론으로 표시한다.
 - DynamoDB와 HeatWave처럼 내부 구현이 공개되지 않은 부분은 추측하지 않고 `공개된 보장`, `알려진 구조`, `알 수 없음`으로 나눈다.
 - 제품별 옵션은 원리를 이해하는 데 필요한 범위로 다룬다.
-- 호스트 전체 자원 관리처럼 데이터베이스의 근본적인 설계 경계와 트레이드오프를 보여주는 내용은 단순 운영·튜닝으로 분류해 제외하지 않는다.
+- 운영·배치 사례는 저장 구조, 보장, 복구, 비용과 자원 경쟁을 이해하는 데 필요한 범위로 다룬다. 특정 배치의 운영 설계나 자원 컨트롤러 설정을 독립된 필수 과정으로 둘지는 제품별 목표와 새로 배울 원리를 근거로 정한다.
 
 ## 학습과 통과 절차
 
